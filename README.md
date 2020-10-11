@@ -1,4 +1,4 @@
 # Multitenant base client
-Base client for multitenant applications.
+Base client for a multitenant application.
 
 ## Versions history
