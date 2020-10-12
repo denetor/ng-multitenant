@@ -1,1 +1,26 @@
-<p>login works!</p>
+<h2>Login</h2>
+<div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">Email is required</div>
+            </div>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div *ngIf="f.password.errors.required">Password is required</div>
+            </div>
+        </div>
+        <div>
+            <button [disabled]="loading">
+                <span *ngIf="loading">Loading...</span>
+                Login
+            </button>
+        </div>
+        <div *ngIf="error">{{error}}</div>
+    </form>
+</div>
