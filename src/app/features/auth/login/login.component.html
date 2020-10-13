@@ -1,3 +1,36 @@
+<div class="page-container">
+    <div class="logo-container">
+        <!-- nothing here -->
+    </div>
+    <div class="form-container">
+        <div class="mat-title">Login</div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="text" formControlName="email" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <mat-error *ngIf="f.email.errors.required">Email is required</mat-error>
+                </div>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <mat-error *ngIf="f.password.errors.required">Password is required</mat-error>
+                </div>
+            </mat-form-field>
+            <div class="actions-container">
+                <button mat-flat-button color="primary" [disabled]="loading">
+                    <mat-spinner diameter="16" *ngIf="loading"></mat-spinner>
+                    Login
+                </button>
+            </div>
+            <div *ngIf="error">{{error}}</div>
+        </form>
+    </div>
+</div>
+
+<!--
 <h2>Login</h2>
 <div>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -24,3 +57,4 @@
         <div *ngIf="error">{{error}}</div>
     </form>
 </div>
+-->

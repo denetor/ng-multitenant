@@ -10,7 +10,6 @@ import {User} from './features/auth/models/user';
     styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-    title = 'ng-multitenant';
     currentUser: User;
 
     constructor(
@@ -21,7 +20,7 @@ export class AppComponent {
     }
 
 
-    logout() {
+    logout(): void {
         this.authenticationService.logout();
         this.router.navigate(['/login']);
     }
