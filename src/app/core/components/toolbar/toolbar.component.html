@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button aria-label="Show/hide sidenav menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="spacer"></span>
+    <a mat-button [routerLink]="'/demopage'"> Demo </a>
+    <a mat-button [routerLink]="'/auth/login'"> Login </a>
+    <button mat-icon-button aria-label="Logout" (click)="logout();">
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
+</mat-toolbar>

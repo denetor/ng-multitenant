@@ -6,10 +6,9 @@ Base client for a multitenant application.
 ### 0.0.1
 - Working authentication (without styling)
 - Login component styling
-- [ ] Adapt login page layout basing on screen size, using flex
-- [ ] Show/display navbar basing on route or route option
-- [ ] Primitive Navbar
-- [ ] Primitive sidebar
+- Primitive navbar, sidebar, main area and footer
+- [ ] hide navbar elements basing on user login status
+- [ ] hide sidebar elements basing on user login status and route preference
 
 ### 0.0.2
 - [ ] OrganizationAdmin component: organizations list for site admin

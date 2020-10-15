@@ -1,9 +1,16 @@
-<!-- navigation -->
-<div>
-    <a routerLink="/" routerLinkActive="active">Home</a>
-    <a (click)="logout()">Logout</a>
+<div id="app-area">
+    <div id="toolbar-area">
+        <app-toolbar></app-toolbar>
+    </div>
+    <mat-sidenav-container id="container-area">
+        <mat-sidenav mode="side" opened>
+            <app-sidenav></app-sidenav>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    <div id="footer-area">
+        <app-footer></app-footer>
+    </div>
 </div>
-
-
-<!-- main -->
-<router-outlet></router-outlet>

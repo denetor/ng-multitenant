@@ -7,16 +7,32 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {JwtInterceptor} from './core/interceptors/jwt.interceptor';
 import {HttpErrorInterceptor} from './core/interceptors/http-error.interceptor';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { SidenavComponent } from './core/components/sidenav/sidenav.component';
+import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        FooterComponent,
+        SidenavComponent,
+        ToolbarComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatListModule
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
