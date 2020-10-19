@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {PageNotFoundComponent} from '@app/shared/components/page-not-found/page-not-found.component';
+import {IndexpageComponent} from '@app/features/indexpage/indexpage.component';
 
 const routes: Routes = [
-    // { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: '', redirectTo: 'index', pathMatch: 'full' },
+    {
+        path: 'index', component: IndexpageComponent
+    },
     {
         path: 'auth',
         loadChildren: () => import('./features/auth/auth.module').then(m => m.AuthModule)
@@ -12,7 +17,7 @@ const routes: Routes = [
         loadChildren: () => import('./features/demopage/demopage.module').then(m => m.DemopageModule)
     },
     // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

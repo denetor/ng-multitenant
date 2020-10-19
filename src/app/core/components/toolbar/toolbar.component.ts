@@ -8,6 +8,7 @@ import {AuthenticationService} from '@app/core/services/authentication.service';
   styleUrls: ['./toolbar.component.sass']
 })
 export class ToolbarComponent implements OnInit {
+    public currentUser = null;
 
     constructor(
         private router: Router,
@@ -16,6 +17,11 @@ export class ToolbarComponent implements OnInit {
 
 
     ngOnInit(): void {
+        this.authenticationService.currentUser.subscribe(
+            user => {
+                this.currentUser = user;
+            }
+        );
     }
 
 

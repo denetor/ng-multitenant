@@ -15,13 +15,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         FooterComponent,
         SidenavComponent,
-        ToolbarComponent
+        ToolbarComponent,
+        PageNotFoundComponent
     ],
     imports: [
         BrowserModule,
